@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="style1.css">
+
+<title>Calculate</title>
+
+</head>
+
+<form id="myForm2" name="studentform" style="display:table;margin-left:574px;">
+
+    
+            <input type="number" name="english" placeholder="Enter your marks" required>
+        
+                <input type="number" name="tamil" placeholder="Enter your marks" required>
+       
+                <input type="number" name="social" placeholder="Enter your marks" required>
+        
+
+    <input type="button" name="" value="ADD" onclick="calculate()"> 
+    <input type="text" name="result">
+
+    <script>
+    
+    function calculate(){
+
+        mark1=parseFloat(myForm2.mark1.value);
+        mark2=parseFloat(myForm2.mark2.value);
+        mark3=parseFloat(myForm2.mark3.value);
+        mark4=parseFloat(myForm2.mark4.value);
+        mark5=parseFloat(myForm2.mark5.value);
+        result=mark1+mark2+mark3+mark4+mark5;
+        myForm2.result.value=result;
+
+    }
+
+    </script>

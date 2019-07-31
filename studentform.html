@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="style1.css">
+
+<title>Student Form</title>
+<style>
+
+</style>
+</head>
+
+<body>
+
+<form id="myForm1" name="studentform">
+
+    <h1>Student Registration Form</h1>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Name</b></label>
+        </div>
+    
+        <div class="col-2">
+            <input type="text" id="sname" name="sname" placeholder="Enter your name" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Address</b></label>
+        </div>
+    
+        <div class="col-2">
+            <textarea id="address" name="address" rows="4" cols="30"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Mobile Number</b></label>
+        </div>
+    
+        <div class="col-2">
+            <input type="text" id="mobno" name="mobno" placeholder="Enter your mobile number" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Email</b></label>
+        </div>
+    
+        <div class="col-2">
+            <input type="email" id="email" name="email" placeholder="Enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Date of Birth</b></label>   
+        </div>
+    
+        <div class="col-2">
+            <input type="date" id="dob" name="dob" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Gender</b></label>
+        </div>
+    
+        <div class="col-2">
+            <select id="gender" name="genser">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+    </div>
+
+    <button class="button" onclick="formHandeler(1)">Next</button>
+
+    <!-- <input type="submit" value="Next"> -->
+
+</form>
+
+
+
+<form id="myForm2"  name="studentform" >
+
+    <h1>10th Mark Details</h1>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>English</b></label>
+        </div>
+    
+        <div class="col-2">
+            <input type="number" name="english" placeholder="Enter your marks" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Tamil</b></label>
+        </div>
+    
+        <div class="col-2">
+                <input type="number" name="tamil" placeholder="Enter your marks" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Maths</b></label>
+        </div>
+    
+        <div class="col-2">
+                <input type="number" name="maths" placeholder="Enter your marks" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Science</b></label>
+        </div>
+    
+        <div class="col-2">
+            <input type="number" name="science" placeholder="Enter your marks" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Social Science</b></label>
+        </div>
+    
+        <div class="col-2">
+                <input type="number" name="social" placeholder="Enter your marks" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            
+        </div>
+    
+        <div class="col-2">
+                <input type="button" id="total" name="total" value="Total" onclick="calculate()"> 
+        </div>
+    </div>
+
+    <h1 id="total"></h1>
+
+    <div class="row">
+        <div class="col-1">
+            <label><b>Total</b></label>
+        </div>
+    
+        <div class="col-2">
+            <input type="text" name="result">
+        </div>
+    </div>
+
+    <div class="row">   
+        <div class="col-11">
+            <button class="btn-1" onclick="formHandeler(2)">Previous</button>
+        </div>
+    
+        <div class="col-12">
+            <button class="btn-2" onclick="formHandeler(3)">Submit</button>
+        </div>
+    </div>
+
+    <!-- <a class="button" href="report.html"><p class="text">Submit</p></a> -->
+
+    <!-- <input type="submit" value="Next"> -->
+
+</form>
+
+<h4 id="result">
+        
+</h4>
+
+<script>
+
+function formHandeler(val){
+    alert(val);
+    var studentDetails = [];
+    if(val == 1){
+        document.getElementById("myForm2").classList.add("show");        
+        document.getElementById("myForm1").classList.add("hide");     
+        var form  = document.getElementById('myForm1');
+        
+studentDetails.push(form.sname.value);
+studentDetails.push(form.address.value);
+studentDetails.push(form.email.value);
+studentDetails.push(form.dob.value);
+studentDetails.push(form.gender.value);
+alert(studentDetails)
+    }else if (val == 2){
+        document.getElementById("myForm2").classList.add("hide");                
+        document.getElementById("myForm1").classList.add("show");            
+        document.getElementById("result").innerHTML = studentsDetails;     
+        studentDetails.push(form.sname.value);
+studentDetails.push(form.address.value);
+studentDetails.push(form.email.value);
+studentDetails.push(form.dob.value);
+studentDetails.push(form.gender.value);
+alert(studentDetails)
+    }else{
+        document.getElementById("myForm2").classList.add("hide");                
+        document.getElementById("myForm1").classList.add("hide");                        
+                 
+    }
+    
+}
+
+
+
+function calculate(){
+
+    mark1=parseFloat(myForm2.english.value);
+    mark2=parseFloat(myForm2.tamil.value);
+    mark3=parseFloat(myForm2.maths.value);
+    mark4=parseFloat(myForm2.science.value);
+    mark5=parseFloat(myForm2.social.value);
+    result=mark1+mark2+mark3+mark4+mark5;
+    myForm2.result.value=result;
+
+}
+
+
+</script>
+
+</body>
+
+</html>
